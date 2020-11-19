@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <title>Pokemon-API</title>
+    <script>
+      $(document).ready(function () {
+        // click to fetch
+        $("button").click(function () {
+          for (i = 1; i <= 151; i++) {
+            $("div.row").append(
+              "<img src='https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/shiny/" +
+                i +
+                ".png'/>"
+            );
+            console.log(`${i} pokemon loaded`);
+            $("h3").text(i + " CAUGHT!");
+          } // end for loop
+
+          $(this).hide();
+        });
+      });
+    </script>
+    <style>
+      * {
+        /* outline: 1px solid red; */
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: sans-serif;
+        color: white;
+      }
+      .wrapper {
+        background-color: #333;
+        min-height: 800px;
+        padding-top: 30px;
+      }
+      .container {
+        width: 800px;
+        min-height: 100px;
+        margin: 0 auto;
+        padding: 20px;
+        border-radius: 15px;
+        background-color: rgb(168, 91, 31);
+        /* border-radius: 20px; */
+      }
+      header img {
+        width: 100%;
+        display: block;
+        margin: 0 auto;
+        border-radius: 15px;
+        margin-bottom: 20px;
+      }
+      h1 {
+        padding: 10px;
+        text-align: center;
+        border-radius: 15px;
+        border: 1px solid grey;
+        background-color: grey;
+        color: white;
+        margin-bottom: 20px;
+      }
+      main {
+        background-color: rgba(104, 104, 104, 0.7);
+        min-height: 20px;
+        border-radius: 15px;
+        text-align: center;
+      }
+      button {
+        background-color: orange;
+        border: 1px solid orange;
+        padding: 20px;
+        align-items: center;
+        display: block;
+        margin: 0 auto;
+        border-radius: 15px;
+        margin-bottom: 20px;
+        font-size: 16pt;
+        background: linear-gradient(orange, rgb(85, 55, 1));
+        cursor: pointer;
+      }
+      button:hover {
+        background: linear-gradient(rgb(85, 55, 1), orange);
+      }
+      div.row {
+      }
+    </style>
+  </head>
+  <body>
+    <div class="wrapper">
+      <div class="container">
+        <header>
+          <img src="./pokeman-banner.png" alt="" />
+        </header>
+        <h1>Pokemon-API</h1>
+        <button>Click to catch 151 Pokemon!</button>
+        <main>
+          <h3>Gotta Catch Em' ALL!</h3>
+          <div class="row">
+            <!-- <img
+              src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/shiny/1.png"
+            />
+            <img
+              src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/shiny/2.png"
+            /> -->
+          </div>
+        </main>
+      </div>
+    </div>
+  </body>
+</html>
